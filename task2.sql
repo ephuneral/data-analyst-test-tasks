@@ -15,7 +15,10 @@ SELECT
     emp_id,
     salary,
     SUM(salary) OVER (
-        PARTITION BY emp_id
+        -- в оконной функции разделяем на группы по emp_id
+        -- сортируем по month
+        -- считаем сумму SUM(salary)
+        PARTITION BY emp_id 
         ORDER BY month        
     ) AS sum_salary
 FROM fin

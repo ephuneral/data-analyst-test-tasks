@@ -1,10 +1,10 @@
 CREATE TABLE IF NOT EXISTS dep (
-    id   INTEGER PRIMARY KEY,
+    id   INTEGER,
     name TEXT
 );
 
 CREATE TABLE IF NOT EXISTS emp (
-    id      INTEGER PRIMARY KEY,
+    id      INTEGER,
     name    TEXT,
     dep_id  INTEGER,
     age     INTEGER,
@@ -18,7 +18,12 @@ CREATE TABLE IF NOT EXISTS fin (
     sum_salary  INTEGER
 );
 
-TRUNCATE TABLE emp, dep, fin RESTART IDENTITY;
+CREATE TABLE IF NOT EXISTS dep2 (
+    id   INTEGER,
+    name TEXT
+);
+
+TRUNCATE TABLE emp, dep, fin, dep2 RESTART IDENTITY;
 
 INSERT INTO dep VALUES (1, 'Бухгалтерия'), (2, 'Кадры');
 
@@ -40,3 +45,13 @@ INSERT INTO fin (month, emp_id, salary) VALUES
 (1, 2, 60),
 (2, 2, 60),
 (3, 2, 60);
+
+INSERT INTO dep2 VALUES
+(1, 'Бухгалтерия'), 
+(1, 'Бухгалтерия'),
+(1, 'Бухгалтерия'),
+(1, 'Бухгалтерия'),
+(1, 'Бухгалтерия'),
+(2, 'Кадры'),
+(2, 'Кадры'),
+(2, 'Кадры');
