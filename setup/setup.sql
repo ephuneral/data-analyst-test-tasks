@@ -1,15 +1,24 @@
-CREATE TABLE dep (
+CREATE TABLE IF NOT EXISTS dep (
     id   INTEGER PRIMARY KEY,
     name TEXT
 );
 
-CREATE TABLE emp (
+CREATE TABLE IF NOT EXISTS emp (
     id      INTEGER PRIMARY KEY,
     name    TEXT,
     dep_id  INTEGER,
     age     INTEGER,
     salary  INTEGER
 );
+
+CREATE TABLE IF NOT EXISTS fin (
+    month       INTEGER,
+    emp_id      INTEGER,
+    salary      INTEGER,
+    sum_salary  INTEGER
+);
+
+TRUNCATE TABLE emp, dep, fin RESTART IDENTITY;
 
 INSERT INTO dep VALUES (1, 'Бухгалтерия'), (2, 'Кадры');
 
@@ -23,3 +32,11 @@ INSERT INTO emp VALUES
 (7, 'Сидоров', 2, 31, 55),
 (8, 'Сидоров', 2, 30, 67),
 (9, 'Федотов', 2, 18, 43);
+
+INSERT INTO fin (month, emp_id, salary) VALUES
+(1, 1, 50),
+(2, 1, 50),
+(3, 1, 50),
+(1, 2, 60),
+(2, 2, 60),
+(3, 2, 60);
