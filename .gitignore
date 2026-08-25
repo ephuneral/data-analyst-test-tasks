@@ -1,0 +1,64 @@
+# --- Python ---
+# Байт-код и кэш
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Виртуальные окружения
+venv/
+ENV/
+env/
+.venv/
+
+# Дистрибуция и сборка
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Логи и тесты
+*.log
+.pytest_cache/
+.mypy_cache/
+.tox/
+
+# --- Базы данных и SQL ---
+# Локальные файлы баз данных
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+# Дампы баз данных (резервные копии)
+*.sql
+*.dump
+*.bak
+
+# Настройки и конфиги с паролями к БД
+.env
+.env.local
+config.json
+secrets.toml
+
+# --- Редакторы и ОС ---
+# VS Code
+.vscode/
+# PyCharm / JetBrains
+.idea/
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
